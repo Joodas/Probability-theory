@@ -1,30 +1,26 @@
-from itertools import product
+import decimal #библиотека длинной арифметики
+import math
 
-def comb(n, k):
-    """Генерация сочетаний из `n` по `k` без повторений."""
+def soch_bez_povtora(n, m): #отдельная функция для подсчёта сочетаний без повторений
+    c = math.factorial(n)/(math.factorial(m)*math.factorial(n-m)) #формула сочетаний без повторений
+    return (c)
 
-    d = list(range(0, k))
-    yield d
+print("Введите значения n и m")
+print("n = ")
+n = int(input(""))
+print("m = ")
+m = int(input(""))   
 
-    while True:
-        i = k - 1
-        while i >= 0 and d[i] + k - i + 1 > n:
-            i -= 1
-        if i < 0:
-            return
-
-        d[i] += 1
-        for j in range(i + 1, k):
-            d[j] = d[j - 1] + 1
-
-        yield d
-
-def comb_sets(sets, m):
-    """Генерация сочетаний из элементов множеств `sets` по `m` элементов."""
-
-    for ci in comb(len(sets), m):
-        for cj in product(*(sets[i] for i in ci)):
-            yield cj
-
-for c in comb_sets([['a'], ['b', 'c'], ['d', 'e', 'f'], ['j', 'k']], 3):
-    print(c)
+#проверяем  m > n или нет
+if m > n:
+    print("m должно быть больше или равно n ")
+    print("Введите значения n и m")
+    print("n = ")
+    n = int(input(""))
+    print("m = ")
+    m = int(input(""))
+    soch_bez_povtora(n, m)
+else:
+    soch_bez_povtora(n, m)
+print(n, m)
+print ("c = ", int(soch_bez_povtora(n, m))) #вывод результата
