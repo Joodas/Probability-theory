@@ -1,26 +1,21 @@
-import decimal #библиотека длинной арифметики
 import math
 
-def soch_bez_povtora(n, m): #отдельная функция для подсчёта сочетаний без повторений
-    c = math.factorial(n)/(math.factorial(m)*math.factorial(n-m)) #формула сочетаний без повторений
-    return (c)
+def combinations_without_repetition(n, m):                                  # отдельная функция для подсчёта сочетаний без повторений
+    return (math.factorial(n)/(math.factorial(m)*math.factorial(n-m)))      # формула сочетаний без повторений
 
-print("Введите значения n и m")
-print("n = ")
-n = int(input(""))
-print("m = ")
-m = int(input(""))   
+print("Введите значения n и m")                                             #
+print("n = ", end = '')                                                     #
+n = int(input(""))                                                          # просим ввести значения
+print("m = ", end = '')                                                     #
+m = int(input(""))                                                          #
 
-#проверяем  m > n или нет
-if m > n:
-    print("m должно быть больше или равно n ")
-    print("Введите значения n и m")
-    print("n = ")
-    n = int(input(""))
-    print("m = ")
-    m = int(input(""))
-    soch_bez_povtora(n, m)
-else:
-    soch_bez_povtora(n, m)
-print(n, m)
-print ("c = ", int(soch_bez_povtora(n, m))) #вывод результата
+if m > n:                                                                   # проверяем  m > n или нет
+                                                                            
+    print("m должно быть меньше или равно n ")                              
+    print("Введите значения n и m")                                         #
+    print("n = ", end = '')                                                 # повторныый ввод, если значчения не удволетворяют условию
+    n = int(input(""))                                                      #
+    print("m = ", end = '')                                                 #
+    m = int(input(""))                                                      #
+    
+print ("c = ", int(combinations_without_repetition(n, m)))                  # вывод результата
