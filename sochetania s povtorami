@@ -1,5 +1,13 @@
 import math
-n=10                    #Vvedite n
-m=4                    #Vvedite m
-C = math.factorial(m+n-1)/(math.factorial(m-1)*math.factorial(n))
-print C
+
+def sochetania_s_povtoreniami(n , m):
+    return math.factorial(m+n-1)/(math.factorial(m-1)*math.factorial(n))
+
+print ("Введите значения n и m")
+print ("n = ", end = '')
+n = int(input(""))
+print ("m = ", end = '')
+m = int(input(""))
+
+C = sochetania_s_povtoreniami(n , m)
+print ("С =",C)
