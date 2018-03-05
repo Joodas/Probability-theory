@@ -7,6 +7,8 @@ def Razmeshenie_s_povtorami(n, m):
 def soch_bez_povtora(n, m): #отдельная функция для подсчёта сочетаний без повторений
 	c = math.factorial(n)/(math.factorial(m)*math.factorial(n-m)) #формула сочетаний без повторений
 	return c
+def sochetania_s_povtoreniami(n , m):
+        return math.factorial(m+n-1)/(math.factorial(m-1)*math.factorial(n))
 
 print ("Какую формулу вы хотите использовать? Введите 1, 2 или 3")
 print ("Formula = ", end = '')
@@ -43,3 +45,10 @@ elif (Formula == 2):
 elif (Formula == 3): #Здесь должна быть часть кода Никитоса
 	print ("Вы выбрали формулу: число сочетаний с повторениями")
 	print ("С[n, m] = (n + m - 1)! / (m! * (n - 1)!)")
+	print ("Введите значения n и m")
+        print ("n = ", end = '')
+        n = int(input(""))
+        print ("m = ", end = '')
+        m = int(input(""))
+        C = sochetania_s_povtoreniami(n , m)
+        print ("С =",C)
