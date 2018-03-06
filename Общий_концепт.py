@@ -10,7 +10,7 @@ def combinations_without_repetition(n, m):
 def sochetania_s_povtoreniami(n, m):
         return math.factorial(n + m - 1)/(math.factorial(m)*math.factorial(n - 1))
 
-print ("Какую формулу вы хотите использовать? Введите 1 - размещение с повторами, 2 - число сочетаний без повтора или 3 - число сочетаний с повторениями")
+print ("Какую формулу вы хотите использовать?\n Введите 1 - размещение с повторами,\n 2 - число сочетаний без повтора,\n 3 - число сочетаний с повторениями")
 print ("Formula = ", end = '')
 Formula = int(input(""))
 
