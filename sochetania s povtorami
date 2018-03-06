@@ -2,12 +2,3 @@ import math
 
 def sochetania_s_povtoreniami(n , m):
     return math.factorial(m+n-1)/(math.factorial(m-1)*math.factorial(n))
-
-print ("Введите значения n и m")
-print ("n = ", end = '')
-n = int(input(""))
-print ("m = ", end = '')
-m = int(input(""))
-
-C = sochetania_s_povtoreniami(n , m)
-print ("С =",C)
